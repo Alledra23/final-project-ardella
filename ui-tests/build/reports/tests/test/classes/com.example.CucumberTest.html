@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CucumberTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CucumberTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.html">com.example</a> &gt; CucumberTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">9.345s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Login with empty username</td>
+<td class="success">3.160s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Login with invalid credentials</td>
+<td class="success">2.196s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Login with valid credentials</td>
+<td class="success">3.989s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@login @valid-login
+Scenario: Login with valid credentials   ?[90m# src/test/resources/login.feature:5?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m            ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m&quot;standard_user&quot;?[0m   ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m        ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will redirect to homepage?[0m    ?[90m# com.example.steps.HomeSteps.userWillRedirectToHomepage()?[0m
+
+@login @invalid-login
+Scenario: Login with invalid credentials                                                                       ?[90m# src/test/resources/login.feature:13?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                                                                                  ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m&quot;standard_user&quot;?[0m                                                                         ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m&quot;WrongPassword&quot;?[0m                                                                      ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m                                                                              ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will see error message ?[0m?[32m?[1m&quot;Epic sadface: Username and password do not match any user in this service&quot;?[0m ?[90m# com.example.steps.LoginSteps.userWillSeeErrorMessage(java.lang.String)?[0m
+
+@login @boundary-login
+Scenario: Login with empty username                                     ?[90m# src/test/resources/login.feature:21?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                                           ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m&quot;&quot;?[0m                                               ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m                                ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m                                       ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will see error message ?[0m?[32m?[1m&quot;Epic sadface: Username is required&quot;?[0m ?[90m# com.example.steps.LoginSteps.userWillSeeErrorMessage(java.lang.String)?[0m
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sep 18, 2025 2:26:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:13 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Sep 18, 2025 2:26:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Sep 18, 2025 2:26:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+?[32m?[1m┌───────────────────────────────────────────────────────────────────────────────────┐?[0m
+?[32m?[1m│?[0m Share your Cucumber Report with your team at ?[36m?[1m?[4mhttps://reports.cucumber.io?[0m          ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Activate publishing with one of the following:                                    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/cucumber.properties:          ?[36mcucumber.publish.enabled?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/junit-platform.properties:    ?[36mcucumber.publish.enabled?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Environment variable:                            ?[36mCUCUMBER_PUBLISH_ENABLED?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m JUnit:                                           ?[36m@CucumberOptions?[0m(publish = ?[36mtrue?[0m) ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m More information at ?[36mhttps://cucumber.io/docs/cucumber/environment-variables/?[0m      ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Disable this message with one of the following:                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/cucumber.properties:          ?[36mcucumber.publish.quiet?[0m=?[36mtrue?[0m      ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/junit-platform.properties:    ?[36mcucumber.publish.quiet?[0m=?[36mtrue?[0m      ?[32m?[1m│?[0m
+?[32m?[1m└───────────────────────────────────────────────────────────────────────────────────┘?[0m
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at Sep 18, 2025, 2:26:20 PM</p>
+</div>
+</div>
+</body>
+</html>

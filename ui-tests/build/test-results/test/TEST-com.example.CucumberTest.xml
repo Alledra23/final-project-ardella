@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.CucumberTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-18T07:26:10" hostname="Ardellas-MacBook-Pro-2.local" time="9.345">
+  <properties/>
+  <testcase name="Login with valid credentials" classname="com.example.CucumberTest" time="3.989"/>
+  <testcase name="Login with invalid credentials" classname="com.example.CucumberTest" time="2.196"/>
+  <testcase name="Login with empty username" classname="com.example.CucumberTest" time="3.16"/>
+  <system-out><![CDATA[
+@login @valid-login
+Scenario: Login with valid credentials   ?[90m# src/test/resources/login.feature:5?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m            ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m"standard_user"?[0m   ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m"secret_sauce"?[0m ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m        ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will redirect to homepage?[0m    ?[90m# com.example.steps.HomeSteps.userWillRedirectToHomepage()?[0m
+
+@login @invalid-login
+Scenario: Login with invalid credentials                                                                       ?[90m# src/test/resources/login.feature:13?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                                                                                  ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m"standard_user"?[0m                                                                         ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m"WrongPassword"?[0m                                                                      ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m                                                                              ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will see error message ?[0m?[32m?[1m"Epic sadface: Username and password do not match any user in this service"?[0m ?[90m# com.example.steps.LoginSteps.userWillSeeErrorMessage(java.lang.String)?[0m
+
+@login @boundary-login
+Scenario: Login with empty username                                     ?[90m# src/test/resources/login.feature:21?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                                           ?[90m# com.example.steps.LoginSteps.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input email ?[0m?[32m?[1m""?[0m                                               ?[90m# com.example.steps.LoginSteps.userInputEmail(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password ?[0m?[32m?[1m"secret_sauce"?[0m                                ?[90m# com.example.steps.LoginSteps.userInputPassword(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click on Login button?[0m                                       ?[90m# com.example.steps.LoginSteps.userClickOnLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser will see error message ?[0m?[32m?[1m"Epic sadface: Username is required"?[0m ?[90m# com.example.steps.LoginSteps.userWillSeeErrorMessage(java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sep 18, 2025 2:26:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:13 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Sep 18, 2025 2:26:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Sep 18, 2025 2:26:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 140
+Sep 18, 2025 2:26:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 140.0.7339.133. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+?[32m?[1m┌───────────────────────────────────────────────────────────────────────────────────┐?[0m
+?[32m?[1m│?[0m Share your Cucumber Report with your team at ?[36m?[1m?[4mhttps://reports.cucumber.io?[0m          ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Activate publishing with one of the following:                                    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/cucumber.properties:          ?[36mcucumber.publish.enabled?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/junit-platform.properties:    ?[36mcucumber.publish.enabled?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Environment variable:                            ?[36mCUCUMBER_PUBLISH_ENABLED?[0m=?[36mtrue?[0m    ?[32m?[1m│?[0m
+?[32m?[1m│?[0m JUnit:                                           ?[36m@CucumberOptions?[0m(publish = ?[36mtrue?[0m) ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m More information at ?[36mhttps://cucumber.io/docs/cucumber/environment-variables/?[0m      ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m Disable this message with one of the following:                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m                                                                                   ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/cucumber.properties:          ?[36mcucumber.publish.quiet?[0m=?[36mtrue?[0m      ?[32m?[1m│?[0m
+?[32m?[1m│?[0m src/test/resources/junit-platform.properties:    ?[36mcucumber.publish.quiet?[0m=?[36mtrue?[0m      ?[32m?[1m│?[0m
+?[32m?[1m└───────────────────────────────────────────────────────────────────────────────────┘?[0m
+]]></system-err>
+</testsuite>
