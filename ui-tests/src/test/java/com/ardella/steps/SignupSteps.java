@@ -32,6 +32,6 @@ public class SignupSteps extends BaseTest {
 
     @Then("a sign up success alert {string} should appear")
     public void aSignUpSuccessAlertShouldAppear(String successMessage) {
-        signupPage.aSignUpSuccessAlertShouldAppea(successMessage);
+        signupPage.aSignUpSuccessAlertShouldAppear(successMessage);
     }
 }

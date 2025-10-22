@@ -12,25 +12,28 @@ public class LoginSteps extends BaseTest {
 
     protected LoginPage loginPage;
 
-    @When("user click on Login button")
-    public void userClickOnLoginButton() {
+    @When("user clicks Log in button")
+    public void userClicksLogInButton() {
         loginPage = new LoginPage(driver);
-        loginPage.userClickOnLoginButton();
+        loginPage.userClicksLogInButton();
     }
 
-    @And("user input email {string}")
-    public void userInputEmail(String username) {loginPage.userEntersUsername(username);
+    @And("user input username {string}")
+    public void userInputUsername(String username) {loginPage.userInputUsername(username);
     }
 
     @And("user input password {string}")
-    public void userInputPassword(String password) {loginPage.userEntersUsername(password);
+    public void userInputPassword(String password) {loginPage.userInputPassword(password);
     }
 
     @And("user submits the login form")
-    public void userSubmitsTheLoginForm() {
+    public void userSubmitsTheLoginButton() {loginPage.userSubmitsTheLoginButton();
     }
 
-    @Then("user should see their username displayed on homepage")
-    public void userShouldSeeTheirUsernameDisplayedOnHomepage() {
+    @Then("user should see {string} displayed on homepage")
+    public void userShouldSeeDisplayedOnHomepage(String accountName) {
+        loginPage.userShouldSeeDisplayedOnHomepage(accountName);
     }
+
+
 }
