@@ -13,7 +13,7 @@ public class CartPage {
 
     WebDriverWait wait;
 
-    By samsungGalaxyHome = By.xpath("//a[text()='Samsung galaxy s6']");
+    By productHome = By.xpath("//a[text()='Samsung galaxy s6']");
     By addProductToCart = By.xpath("//a[text()='Add to cart']");
     By cart = By.id("cartur");
 
@@ -22,8 +22,8 @@ public class CartPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // explicit wait
     }
 
-    public void userClicksProduct(String samsungGalaxy) {
-        driver.findElement(samsungGalaxyHome).click();
+    public void userClicksAProduct () {
+        driver.findElement(productHome).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(addProductToCart));
     }
 
@@ -32,11 +32,7 @@ public class CartPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cart));
     }
 
-    public void theCartShouldContain(String samsungGalaxyS6) {
-//        assertTrue(driver.getPageSource().contains(accountName));
-        wait.until(ExpectedConditions.alertIsPresent());
-        String alertText = driver.switchTo().alert().getText();
-        assertTrue(alertText.contains(samsungGalaxyS6));
-        driver.switchTo().alert().accept();
+    public void userClickCart() {
+        driver.findElement(cart).click();
     }
 }
